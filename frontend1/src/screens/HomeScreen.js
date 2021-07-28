@@ -1,9 +1,17 @@
-import React from 'react'
+
+import React,{useState,useEffect} from  'react'
 import products from '../products'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
+import axios from 'axios'
 
 function HomeScreen() {
+    const [products, setProducts] = useState([])
+    
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/prapi/products/')
+    },[])
     return (
         <div>
             <h1>Latest products</h1>
